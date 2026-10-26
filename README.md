@@ -4,6 +4,18 @@ A console-style home screen for LG webOS TVs. It is a single web app written in 
 
 ![Screenshot of the launcher](assets/screenshot.png)
 
+## Before and after
+
+Captured on the TV itself (LG 55UP77006LB, webOS 6.5) with `tvctl.py`.
+
+| Stock LG home | Ads and apps removed | Console home |
+| --- | --- | --- |
+| ![Stock LG home screen with ads and preinstalled apps](assets/before.jpg) | ![LG home screen after removing apps and disabling ads](assets/cleaned.jpg) | ![The console-style home screen running on the TV](assets/after.jpg) |
+
+1. **Stock:** recommended content, ad banners and a row of preinstalled streaming apps.
+2. **Cleaned:** preinstalled apps removed and all advertising and tracking options switched off in the TV settings.
+3. **Console home:** this project, started automatically by the home-server daemon.
+
 ## Features
 
 - Animations use only `transform` and `opacity`, so they stay smooth on the TV's weak GPU.
