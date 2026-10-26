@@ -53,7 +53,7 @@ Captured on the TV itself (LG 55UP77006LB, webOS 6.5) with `tvctl.py`.
    ares-setup-device -m tv -i "passphrase=YOUR_PASSPHRASE"
    ```
 
-5. **Edit `launcher/config.js`.** Set `hubUrl` to the address of the home-server daemon (see below), or leave the example value if you do not use it. `name` is an optional text for the top bar and is hidden when empty.
+5. **Edit `launcher/config.js`.** Set `hubUrl` to the address of the home-server daemon (see below), or leave the example value if you do not use it. `name` is an optional text for the top bar and is hidden when empty. The date follows the TV's menu language; set `locale` (for example `'en-US'`) to use a different one.
 
 6. **Package and install.**
 

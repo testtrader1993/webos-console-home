@@ -3,8 +3,9 @@
 
   var CONFIG = window.HOME_CONFIG || {};
 
-  var DAYS = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'];
-  var MONTHS = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
+  // Date language: config.locale if set, otherwise the TV's menu language.
+  var LOCALE = CONFIG.locale || navigator.language || 'en';
+  var DATE_OPTS = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
 
   var URI_A = 'luna://com.webos.applicationManager/launch';
   var URI_B = 'luna://com.webos.service.applicationManager/launch';
@@ -161,7 +162,9 @@
   function tick() {
     var d = new Date();
     $('clock').textContent = pad(d.getHours()) + ':' + pad(d.getMinutes());
-    $('date').textContent = DAYS[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear();
+    var s;
+    try { s = d.toLocaleDateString(LOCALE, DATE_OPTS); } catch (e) { s = d.toLocaleDateString('en', DATE_OPTS); }
+    $('date').textContent = s;
   }
 
   /* ---------- particles ---------- */
