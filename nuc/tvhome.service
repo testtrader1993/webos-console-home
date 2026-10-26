@@ -1,0 +1,14 @@
+[Unit]
+Description=LG TV home daemon (watcher + HTTP)
+After=network-online.target
+
+[Service]
+WorkingDirectory=%h/tv
+Environment=TV_HOST=192.168.1.20
+# Optional: TV_KEY_FILE, APP_ID, HUB_PORT
+ExecStart=%h/tv/.venv/bin/python %h/tv/nuc/tvhome.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<meta name="viewport" content="width=1920, height=1080">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <div class="bg"></div>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <canvas id="stars" width="1920" height="1080"></canvas>
+
+  <header class="topbar">
+    <div class="clock-wrap"><span id="clock" class="clock">00:00</span><span id="date" class="date"></span></div>
+    <div class="brand" id="brand" hidden></div>
+  </header>
+
+  <main class="tiles" id="tiles">
+    <div class="tile main" data-action="hdmi1" data-label="XBOX">
+      <div class="pulse"></div>
+      <div class="fill"></div>
+      <div class="sheen"></div>
+      <div class="art">
+        <svg class="halo" viewBox="0 0 400 400" aria-hidden="true">
+          <defs><radialGradient id="hg"><stop offset="0" stop-color="#9dff8a" stop-opacity="0.55"/><stop offset="0.45" stop-color="#3fd13a" stop-opacity="0.18"/><stop offset="1" stop-color="#107C10" stop-opacity="0"/></radialGradient></defs>
+          <circle cx="200" cy="200" r="200" fill="url(#hg)"/>
+        </svg>
+        <svg class="ring r1" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="190" fill="none" stroke="#fff" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="60 26 6 26"/></svg>
+        <svg class="ring r2" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="168" fill="none" stroke="#c8ffc0" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="2 14"/></svg>
+        <svg class="logo" viewBox="0 0 24 24" aria-hidden="true">
+          <defs><linearGradient id="lg" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9f5d6"/></linearGradient></defs>
+          <path fill="url(#lg)" d="M4.102 21.033C6.211 22.881 8.977 24 12 24c3.026 0 5.789-1.119 7.902-2.967 1.877-1.912-4.316-8.709-7.902-11.417-3.582 2.708-9.779 9.505-7.898 11.417zm11.16-14.406c2.5 2.961 7.484 10.313 6.076 12.912C23.002 17.48 24 14.861 24 12.004c0-3.34-1.365-6.362-3.57-8.536 0 0-.027-.022-.082-.042-.063-.022-.152-.045-.281-.045-.592 0-1.985.434-4.805 3.246zM3.654 3.426c-.057.02-.082.041-.086.042C1.365 5.642 0 8.664 0 12.004c0 2.854.998 5.473 2.661 7.533-1.401-2.605 3.579-9.951 6.08-12.91-2.82-2.813-4.216-3.245-4.806-3.245-.131 0-.223.021-.281.046v-.002zM12 3.551S9.055 1.828 6.755 1.746c-.903-.033-1.454.295-1.521.339C7.379.646 9.659 0 11.984 0H12c2.334 0 4.605.646 6.766 2.085-.068-.046-.615-.372-1.52-.339C14.946 1.828 12 3.545 12 3.545v.006z"/>
+        </svg>
+      </div>
+      <div class="meta"><div class="title">XBOX</div><div class="sub">HDMI 1 · Spelen</div></div>
+      <div class="glow"></div>
+    </div>
+    <div class="tile small t2" data-action="hdmi2" data-label="HDMI 2">
+      <div class="fill"></div><div class="sheen"></div>
+      <svg class="icon ic-tv" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="15" x="2" y="7" rx="2" ry="2" />
+  <polyline points="17 2 12 7 7 2" /></svg>
+      <div class="meta"><div class="title">HDMI 2</div><div class="sub">Ingang</div></div>
+      <div class="glow"></div>
+    </div>
+    <div class="tile small t3" data-action="settings" data-label="Instellingen">
+      <div class="fill"></div><div class="sheen"></div>
+      <svg class="icon ic-settings" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+  <circle cx="12" cy="12" r="3" /></svg>
+      <div class="meta"><div class="title">Instellingen</div><div class="sub">Tv-opties</div></div>
+      <div class="glow"></div>
+    </div>
+    <div class="tile small t4" data-action="screenoff" data-label="Tv uit">
+      <div class="fill"></div><div class="sheen"></div>
+      <svg class="icon ic-power" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v10" />
+  <path d="M18.4 6.6a9 9 0 1 1-12.77.04" /></svg>
+      <div class="meta"><div class="title">Tv uit</div><div class="sub">Uitzetten</div></div>
+      <div class="glow"></div>
+    </div>
+  </main>
+
+  <div id="flash"></div>
+  <div id="toast"></div>
+  <div id="fps"></div>
+</div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

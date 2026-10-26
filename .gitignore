@@ -1,0 +1,9 @@
+.venv/
+client_key*.json
+shots/
+dist/
+__pycache__/
+.playwright-mcp/
+docs/
+*.log
+.devmode_extended
